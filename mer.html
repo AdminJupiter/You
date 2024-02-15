@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Styles for the Valentine's Day section */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f1aaaa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container header {
+            text-align: center;
+            padding: 20px;
+            background-color: #ff4d4d;
+            border-radius: 10px;
+            color: white;
+        }
+
+        .container header h1 {
+            font-size: 32px; /* Adjust the font size as needed */
+            margin-bottom: 10px;
+        }
+
+        .container header p {
+            font-size: 18px; /* Adjust the font size as needed */
+            color: #fff; /* Adjust the color as needed */
+        }
+
+        img {
+            width: 100%;
+            max-height: 400px;
+            max-width: 200;
+            margin-top: 20px;
+            border-radius: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        footer {
+            margin-top: 20px;
+            color: #555;
+        }
+
+        .heart {
+            color: #ff4d4d;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #ff0404;
+            background-color: #ffcc29;
+            border: 2px solid #e6b800;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .buttons button:hover {
+            background-color: #ffcc00;
+            cursor: pointer;
+        }
+
+        .sunflower-icon {
+            width: 20px;
+            height: auto;
+            margin-right: 8px;
+            filter: brightness(0.8);
+        }
+
+        .journal-content {}
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Styles for the Image Collage Background section */
+        .collage-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-gap: 10px;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .collage img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .collage img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Styles for the Quiz Section */
+        h1,
+        h2 {
+            color: #ff4d4d;
+        }
+
+        .question {
+            margin-top: 20px;
+            font-size: 18px;
+            display: none;
+        }
+
+        .options {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .option {
+            margin: 0 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ffcc29;
+            border: 2px solid #e6b800;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background-color: #ffcc00;
+        }
+
+        #result {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .result-message {
+            color: #ff4d4d;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        .love-message {
+            color: #ff4d4d;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .heart {
+            color: #ff4d4d;
+            animation: heartbeat 1s infinite;
+            cursor: pointer;
+        }
+
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Styles for Fireworks */
+        .firework {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ffcc29;
+            border-radius: 50%;
+            animation: explode 1s linear;
+            transform-origin: center bottom;
+        }
+
+        @keyframes explode {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(15);
+                opacity: 0;
+            }
+        }
+
+        /* Styles for Video Container */
+        #video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Set the height to fill the viewport vertically */
+        }
+    </style>
+    <title>Combined Valentine's Day, Image Collage, and Quiz</title>
+</head>
+
+<body>
+
+    <!-- Valentine's Day Section -->
+    <div class="container">
+        <header>
+            <h1></h1>
+            <p>Happy Valentine's Janrise :)</p>
+            <p>"Express your love with sunflowers"</p>
+        </header>
+        <img src="file:///C:/Users/acer/Downloads/valentine.jpg" alt="Sunflower Image">
+        <div class="buttons">
+            <button onclick="showJournal()">Open Journal</button>
+            <button onclick="showSunflower()">Show Sunflower</button>
+        </div>
+        <div id="journal" class="journal-content">
+            <h2>My Valentine's Day Journal</h2>
+            <p>Today, I express my love with this beautiful sunflower-themed webpage.</p>
+            <p>HI! This is my simple gift for you this valentines day. Sana magustuhan mo itong website na ginawa ko and soon magustuhan mo ako. Hehe joke lang</p>
+            <p>We've meet unexpectdly. You know me now. I open myself to you. We already tend to forget each other. We talk stories of our own.
+                Di mo man lang ako niyaya ngayon feb.14 for date haha. Joke I'm just kidding. Once again thank for letting me feel this. Happy Valentines.
+             </p>
+<h2>TULA PARA SAYO</h2>
+             <p>Sa puso ko'y may bagong sumiklab na lihim,
+                Si Janrise ang pangalan, ang aking lihim na giliw.
+                Sa kanyang mga mata, ang init ng araw,
+                Sulyap ng pag-ibig, tila'y walang hanggan.
+                
+                Bunga ng araw, sa kanyang pagluha,
+                Sa pag-ibig na taglay, kasabay ng saya.
+                Sa mga kamay na nagmula sa trigo,
+                Si Janrise, sa puso, tunay na kaakit-akit.
+                
+                Sa paglipas ng mga araw, sa ilalim ng liwanag,
+                Ang pagnanasa'y nagliliyab, hindi mawawaglit.
+                Sa sunflower at toblerone, mga pag-ibig na senyas,
+                Sa kanyang piling, saya'y walang hanggan.
+                
+                Kyut si Janrise, tila'y bituin sa gabi,
+                Sa harap niya, ang mundo'y nagiging mas masaya.
+                Mahal kita, Janrise, ito'y matapat na tibok,
+                Ang pag-ibig ko'y iyong alagaan, habang buhay.
+                
+                Sa araw ng mga puso, ang ating pagdiriwang,
+                Kasama si Janrise, na siyang tibok ng puso ko.
+                Mahal kita, mahal kita, paulit-ulit na tugma,
+                Sa sunflower at toblerone, tayo'y maglalakbay.
+                
+                Sa pag-ibig na ito, puno ng kasiyahan,
+                Si Janrise, kasama sa pag-awit ng pagmamahalan.
+                Tula'y luntian, sa puso'y kay tamis,
+                Mahal kita, Janrise, ang aking pag-ibig sayo'y walang kapantay.
+                </p>
+        </div>
+        <footer>
+            <p>Designed with <span class="heart">&hearts;</span> Levi Mers</p>
+        </footer>
+    </div>
+
+    <!-- Image Collage Background Section -->
+    <div class="collage-container">
+        <!-- Your images go here -->
+        <img src="file:///C:/Users/acer/Desktop/button.html/1707891407439.jpg" alt="Image 1">
+        <img src="1707891412183.jpg" alt="Image 2">
+        <img src="1707891534307.jpg" alt="Image 3">
+        <!-- Add more images as needed -->
+    </div>
+
+    <!-- Quiz Section -->
+    <div class="container">
+        <h1>Valentine's Day Quiz</h1>
+
+        <div id="question1" class="question" style="display: block;">
+            <p>1. What is your favorite flower?</p>
+            <div class="options">
+                <button class="option" onclick="nextQuestion()">Sunflower</button>
+                <button class="option" onclick="nextQuestion()">Rose</button>
+                <button class="option" onclick="nextQuestion()">Tulips</button>
+            </div>
+        </div>
+
+        <div id="question2" class="question">
+            <p>2. What's your favorite chocolate?
+            </p>
+            <div class="options">
+                <button class="option" onclick="nextQuestion()">Kisses</button>
+                <button class="option" onclick="nextQuestion()">Toblerone</button>
+                <button class="option" onclick="nextQuestion()">Dairy Milk</button>
+            </div>
+        </div>
+
+        <div id="question3" class="question">
+            <p>3. Whom do you like the most?:</p>
+            <div class="options">
+                <button class="option" onclick="showLoveMessage()">Jungkook</button>
+                <button class="option" onclick="showLoveMessage()">Ji Min</button>
+                <button class="option" onclick="showLoveMessage('Levi Mers')">Levi Mers</button>
+            </div>
+        </div>
+
+        <div id="result">
+            <h2>Your Valentine's Day Vibe</h2>
+            <p class="result-message">You are feeling the love <span class="heart">&hearts;</span></p>
+        </div>
+
+        <div id="loveMessage" style="display: none;">
+            <!-- Love message will be dynamically set by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Answer Display Section -->
+
+    <!-- YouTube Video Section -->
+   <!-- YouTube Video Section -->
+<div id="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/C8cpR3RqPyc" frameborder="0" allowfullscreen></iframe>
+</div>
+s
+    <script>
+        var currentQuestionIndex = 1;
+
+        function showJournal() {ssss
+            document.getElementById('journal').style.display = 'block';
+            document.querySelector('img').style.display = 'none';
+        }
+
+        function showSunflower() {
+            document.getElementById('journal').style.display = 'none';
+            document.querySelector('img').style.display = 'block';
+        }
+
+        function nextQuestion() {sss
+            var currentQuestion = document.getElementById('question' + currentQuestionIndex);
+            currentQuestion.style.display = 'none';
+
+            currentQuestionIndex++;
+
+            var nextQuestion = document.getElementById('question' + currentQuestionIndex);
+            if (nextQuestion) {
+                nextQuestion.style.display = 'block';
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            document.getElementById('result').style.display = 'block';
+        }
+
+        function showLoveMessage(selectedOption) {
+            if (selectedOption === "Levi Mers") {
+                // Display fireworks when Levi Mers is chosen
+                createFirework();
+                document.getElementById('loveMessage').innerHTML = "<p class='love-message'>I love you! Happy Valentine's Day <span class='heart'>&hearts;</span></p>";
+            } else {
+                document.getElementById('loveMessage').innerHTML = "<p class='love-message'>Ouch! It's okay! I still love you <span class='heart'>&hearts;</span></p>";
+            }
+
+            document.getElementById('loveMessage').style.display = 'block';
+        }
+
+        function createFirework() {
+            const firework = document.createElement('div');
+            firework.className = 'firework';
+            document.body.appendChild(firework);
+
+            const x = window.innerWidth / 2;
+            const y = window.innerHeight;
+
+            firework.style.left = `${x}px`;
+            firework.style.top = `${y}px`;
+
+            setTimeout(() => {
+                firework.remove();
+            }, 1000);
+        }
+    </script>
+
+</body>
+
+</html>
